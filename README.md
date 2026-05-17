@@ -2,22 +2,12 @@
 
 ## What is this repo?
 This is a shared library used by two projects:
-- **Repo 1** — careerbot (my friend's project)
-- **Repo 2** — resumeanalyser (my project)
+- **Repo 1** — careerbot 
+- **Repo 2** — resumeanalyser 
 
 Instead of both projects having their own separate RAG pipeline,
 we extracted the common logic into this one shared repo.
 Both projects import from here.
-
----
-
-## Why did we create this?
-Our sir asked us to:
-- Remove duplicate code from both projects
-- Follow SOLID principles (especially Open/Closed principle)
-- Follow GoF Design Patterns
-- Make the system loosely coupled and highly cohesive
-- Have one shared repo that both projects depend on
 
 ---
 
@@ -111,5 +101,5 @@ This is the **Open/Closed Principle**.
 ---
 
 ## Team
-- Person 1 (your name) — resumeanalyser + rag-core contributor
-- Person 2 (friend's name) — careerbot + rag-core contributor
+- Person 1 Kommireddy Mounika Iswarya — resumeanalyser + rag-core contributor
+- Person 2 Konduri Lakshmi Prasanna — careerbot + rag-core contributor
