@@ -52,7 +52,7 @@ def retrieve_chunks(
     # Embed the query into the latent space
     query_embedding = embed_query(query)
 
-    # Limit k to whats actually in the collection
+    # Limit k to what's actually in the collection
     actual_k = min(k, collection.count())
 
     # Build query kwargs
