@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: rag-core
+Version: 0.1.0
+Requires-Dist: langchain
+Requires-Dist: langchain-groq
+Requires-Dist: langchain-huggingface
+Requires-Dist: chromadb
+Requires-Dist: sentence-transformers
+Requires-Dist: python-dotenv
