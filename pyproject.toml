@@ -11,6 +11,7 @@ requires-python = ">=3.9"
 dependencies = [
     "langchain",
     "langchain-groq",
+    "langchain-google-genai",
     "langchain-huggingface",
     "chromadb",
     "sentence-transformers",
