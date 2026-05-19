@@ -7,7 +7,15 @@ name = "rag_core"
 version = "1.0.0"
 description = "Shared RAG pipeline for careerbot and resumeanalyser"
 requires-python = ">=3.9"
-dependencies = []
+
+dependencies = [
+    "langchain",
+    "langchain-groq",
+    "langchain-huggingface",
+    "chromadb",
+    "sentence-transformers",
+    "python-dotenv",
+]
 
 [tool.setuptools.packages.find]
 where = ["."]
