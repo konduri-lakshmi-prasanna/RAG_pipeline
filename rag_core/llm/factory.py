@@ -1,4 +1,3 @@
-from langchain_groq import ChatGroq
 import os
 
 # Singleton pattern — only one LLM instance created and reused
@@ -16,6 +15,11 @@ def get_llm(model_name: str = "llama3-8b-8192"):
     """
     global _llm_instance
     if _llm_instance is None:
+        try:
+            from langchain_groq import ChatGroq
+        except ImportError:
+            raise ImportError("langchain-groq is required to use the shared Groq LLM.")
+
         api_key = os.getenv("GROQ_API_KEY")
         if not api_key:
             raise ValueError(

@@ -1,11 +1,9 @@
 import chromadb
 from chromadb.config import Settings
-from langchain_huggingface import HuggingFaceEmbeddings
 
 # Singleton pattern — only one client created and reused
 _client = None
 _embeddings = None
-
 
 def get_client():
     """
@@ -29,6 +27,10 @@ def get_embeddings():
     """
     global _embeddings
     if _embeddings is None:
+        try:
+            from langchain_huggingface import HuggingFaceEmbeddings
+        except ImportError:
+            raise ImportError("Please install langchain-huggingface to use the shared embedding model.")
         _embeddings = HuggingFaceEmbeddings(
             model_name="BAAI/bge-base-en-v1.5"
         )
