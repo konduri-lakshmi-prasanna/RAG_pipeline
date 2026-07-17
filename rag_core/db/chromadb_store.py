@@ -1,3 +1,4 @@
+import os
 import chromadb
 from chromadb.config import Settings
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -12,11 +13,21 @@ def get_client():
     Singleton Pattern.
     Creates ChromaDB client only once and reuses it.
     Saves memory and connection time.
+
+    IMPORTANT: The path is read from the CHROMA_DB_PATH env var (set it to an
+    ABSOLUTE path in your project's .env / config). We no longer fall back to
+    a bare "./chroma_db" resolved against the process's current working
+    directory — if the app is ever launched from a different folder than
+    expected, that silently creates/opens a brand-new, EMPTY database instead
+    of the one your documents were actually indexed into, and every query
+    then returns "no relevant context" with no visible error at all.
     """
     global _client
     if _client is None:
+        path = os.getenv("CHROMA_DB_PATH", "./chroma_db")
+        path = os.path.abspath(path)
         _client = chromadb.PersistentClient(
-            path="./chroma_db",
+            path=path,
             settings=Settings(anonymized_telemetry=False)
         )
     return _client
