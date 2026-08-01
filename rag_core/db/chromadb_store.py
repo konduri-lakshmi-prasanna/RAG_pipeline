@@ -73,7 +73,7 @@ def get_embeddings():
     """
     global _embeddings
     if _embeddings is None:
-        api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
+        api_key = os.getenv("GOOGLE_API_KEY") 
         if api_key:
             try:
                 print("🌐 Initializing cloud-based GoogleGenAIEmbeddings (memory-efficient)...")

@@ -17,8 +17,6 @@ Latent space connection (what your mentor mentioned):
 """
 
 from rag_core.llm.factory import get_llm
-
-
 def rewrite_query(query: str, context_hint: str = "") -> str:
     """
     Rewrites a raw user query into a precise, searchable form.
