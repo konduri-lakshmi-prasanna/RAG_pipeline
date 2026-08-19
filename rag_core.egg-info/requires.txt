@@ -1,5 +1,6 @@
 langchain
 langchain-groq
+langchain-google-genai
 langchain-huggingface
 chromadb
 sentence-transformers

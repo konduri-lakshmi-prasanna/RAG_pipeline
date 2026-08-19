@@ -17,7 +17,7 @@ def get_llm(model_name: str = None):
             raise ImportError("langchain-groq is required to use the shared Groq LLM.")
             
         _llm_instance = ChatGroq(
-            model=model_name or "llama-3.3-70b-versatile",
+            model=model_name or "openai/gpt-oss-120b",
             groq_api_key=os.getenv("GROQ_API_KEY"),
             temperature=0.3
         )
